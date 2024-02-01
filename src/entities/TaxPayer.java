@@ -7,6 +7,9 @@ public class TaxPayer {
     private double healthSpending;
     private double educationSpending;
 
+    public TaxPayer() {
+    }
+
     public TaxPayer(double salaryIncome, double servicesIncome, double capitalIncome, double healthSpending, double educationSpending) {
         this.salaryIncome = salaryIncome;
         this.servicesIncome = servicesIncome;
@@ -83,5 +86,17 @@ public class TaxPayer {
 
     public double grossTax(){
         return salaryTax() + capitalTax() + servicesTax();
+    }
+
+    public double taxRebate(){
+        if ((healthSpending+educationSpending) >= (grossTax() * 0.3)){
+            return grossTax() * 0.3;
+        }else {
+            return healthSpending + educationSpending;
+        }
+    }
+
+    public double netTax(){
+        return grossTax() - taxRebate();
     }
 }
