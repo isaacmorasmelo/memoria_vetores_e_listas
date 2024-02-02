@@ -58,17 +58,17 @@ public class TaxPayer {
         this.educationSpending = educationSpending;
     }
 
-    public double salaryTax(){
+    public final double salaryTax(){
         if ((salaryIncome/12) < 3000) {
             return 0;
         } else if ((salaryIncome/12) < 5000){
-            return salaryIncome *= 0.1;
+            return salaryIncome * 0.1;
         } else {
-            return salaryIncome *= 0.2;
+            return salaryIncome * 0.2;
         }
     }
 
-    public double servicesTax(){
+    public final double servicesTax(){
         if (servicesIncome > 0){
             return servicesIncome * 0.15;
         } else {
@@ -76,15 +76,15 @@ public class TaxPayer {
         }
     }
 
-    public double capitalTax(){
+    public final double capitalTax(){
         if (capitalIncome > 0){
             return capitalIncome * 0.2;
-        } else {
+        } else{
             return 0;
         }
     }
 
-    public double grossTax(){
+    public final double grossTax(){
         return salaryTax() + capitalTax() + servicesTax();
     }
 

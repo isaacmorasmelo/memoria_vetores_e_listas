@@ -23,7 +23,7 @@ public class DESAFIO {
         List<TaxPayer> list = new ArrayList<>();
 
         for (int i = 0; i < quantity; i++) {
-            System.out.println("Digite os dados do" + (i+1) +"o contribuinte:");
+            System.out.println("Digite os dados do " + (i+1) +"o contribuinte:");
 
             System.out.print("Renda anual com salário: ");
             rendaAnualSalarial = sc.nextDouble();
